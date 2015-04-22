@@ -1,0 +1,143 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Index</title>
+  <meta name="description" content="The HTML5 Herald">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <script type="text/javascript" src="latlon.js"></script>
+</head>
+
+<body>
+
+<?php
+$locations = array(array("id" => "612brew", "latlon" => "44.999061,-93.246496", "address" => "612Brew"),
+array("id" => "bent", "latlon" => "45.024508,-93.173879", "address" => "Bent Brewstillery"),
+array("id" => "badgerhill", "latlon" => "44.793771,-93.461127", "address" => "Badger Hill Brewery"),
+array("id" => "bang", "latlon" => "44.97048,-93.192588", "address" => "Bang Brewing"),
+array("id" => "bauhaus", "latlon" => "45.00079,-93.244636", "address" => "Bauhaus Brew Labs"),
+array("id" => "bemidji", "latlon" => "47.471782,-94.881616", "address" => "Bemidji Brewing Company"),
+array("id" => "bentpaddle", "latlon" => "46.76764,-92.121874", "address" => "Bent Paddle Brewing"),
+array("id" => "bigwood", "latlon" => "45.085124,-93.006747", "address" => "Big Wood Brewery"),
+array("id" => "boomisland", "latlon" => "44.999866,-93.281473", "address" => "Boom Island Brewing"),
+array("id" => "braubrothers", "latlon" => "44.436527,-95.776115", "address" => "Brau Brothers"),
+array("id" => "burningbrothers", "latlon" => "44.958809,-93.174271", "address" => "Burning Brothers"),
+array("id" => "dangerousman", "latlon" => "45.0011,-93.26638", "address" => "Dangerous Man"),
+array("id" => "enki", "latlon" => "44.859803,-93.661568", "address" => "ENKI Brewing"),
+array("id" => "excelsior", "latlon" => "44.902297,-93.566596", "address" => "Excelsior Brewing"),
+array("id" => "fairstate", "latlon" => "45.013559,-93.247873", "address" => "Fair State"),
+array("id" => "flatearth", "latlon" => "44.962765,-93.071573", "address" => "Flat Earth"),
+array("id" => "fulton", "latlon" => "44.98488,-93.279116", "address" => "Fulton Beer"),
+array("id" => "hammerheart", "latlon" => "45.188805,-93.107281", "address" => "HammerHeart"),
+array("id" => "harriet", "latlon" => "44.94712,-93.233872", "address" => "Harriet Brewing"),
+array("id" => "indeed", "latlon" => "45.003464,-93.251547", "address" => "Indeed Brewing"),
+array("id" => "insight", "latlon" => "44.991922,-93.212967", "address" => "Insight Brewing"),
+array("id" => "jackpine", "latlon" => "46.345263,-94.235198", "address" => "Jack Pine"),
+array("id" => "kinney", "latlon" => "44.031057,-92.478191", "address" => "Kinney Creek"),
+array("id" => "lakesuperior", "latlon" => "46.761083,-92.133364", "address" => "Lake Superior Brewing"),
+array("id" => "leechlake", "latlon" => "47.102875,-94.612918", "address" => "Leech Lake Brewing"),
+array("id" => "liftbridge", "latlon" => "45.039177,-92.831797", "address" => "Lift Bridge Brewing"),
+array("id" => "ltd", "latlon" => "44.924746,-93.40992", "address" => "LTD Brewing"),
+array("id" => "lucid", "latlon" => "44.895228,-93.449625", "address" => "Lucid Brewing"),
+array("id" => "lynlake", "latlon" => "44.949315,-93.2893129", "address" => "LynLake Brewery"),
+array("id" => "mankato", "latlon" => "44.181367,-94.013933", "address" => "Mankato Brewery"),
+array("id" => "sisyphus", "latlon" => "44.973223,-93.288925", "address" => "Sisyphus Brewing"),
+array("id" => "sociable", "latlon" => "45.004516,-93.24415", "address" => "Sociable Cider Werks"),
+array("id" => "steeltoe", "latlon" => "44.9413,-93.34124", "address" => "Steel Toe"),
+array("id" => "summit", "latlon" => "44.914066,-93.139609", "address" => "Summit Beer"),
+array("id" => "surly", "latlon" => "44.973256,-93.209813", "address" => "Surly Brewing"),
+array("id" => "thirdstreet", "latlon" => "45.458898,-94.429468", "address" => "Third Street"),
+array("id" => "tinwhiskers", "latlon" => "44.950868,-93.093479", "address" => "Tin Whiskers Brewing"),
+array("id" => "urbangrowler", "latlon" => "44.970151,-93.192859", "address" => "Urban Growler"),
+array("id" => "waconia", "latlon" => "44.8431091,-93.7954974", "address" => "Waconia Brewing")
+              );
+if(isset($_GET['address'])) $address = $_GET['address'];
+ 
+if(!empty($address)) {
+  sortResults($address, $locations);
+}
+ 
+function sortResults($address, &$locations) {
+  $latlon = geocodeAddress($address); 
+                          
+function geocodeAddress($address) {
+  // Base URL for the Google geocoding API
+  $API_REQ = "https://maps.googleapis.com/maps/api/geocode/json?sensor=false&address=";
+  $req = $API_REQ . urlencode($address);
+ 
+  // Send API request to Google geocoder 
+  $response = file_get_contents($req);
+ 
+  // Parse json response
+  $response = json_decode($response, true);
+  $lat = $response['results'][0]['geometry']['location']['lat'];
+  $lon = $response['results'][0]['geometry']['location']['lng'];
+ 
+  return array('lat'=> $lat, 'lon' => $lon);
+  alert(
+}
+
+function geoDistance($latitudeFrom, $longitudeFrom, $latitudeTo, $longitudeTo, $earthRadius = 6371000)
+{
+  // convert from degrees to radians
+  $latFrom = deg2rad($latitudeFrom);
+  $lonFrom = deg2rad($longitudeFrom);
+  $latTo = deg2rad($latitudeTo);
+  $lonTo = deg2rad($longitudeTo);
+ 
+  $latDelta = $latTo - $latFrom;
+  $lonDelta = $lonTo - $lonFrom;
+ 
+  $angle = 2 * asin(sqrt(pow(sin($latDelta / 2), 2) +
+    cos($latFrom) * cos($latTo) * pow(sin($lonDelta / 2), 2)));
+  return $angle * $earthRadius;
+}
+
+function sortResults($address, &$locations) {
+  $latlon = geocodeAddress($address); 
+ 
+  //Call usort with anonymous comparator function
+  usort($locations, function($a, $b) use ($latlon) {
+    $locA  = array_map('floatval', array_map('trim', explode(',', $a['latlon'])));
+    $locB  = array_map('floatval', array_map('trim', explode(',', $b['latlon'])));
+ 
+    $distA = geoDistance($latlon['lat'], $latlon['lon'], $locA[0], $locA[1]);
+    $distB = geoDistance($latlon['lat'], $latlon['lon'], $locB[0], $locB[1]);
+ 
+    if($distA == $distB) {
+        return 0;
+    }
+    return ($distA < $distB) ? -1 : 1;
+  });
+}
+
+?>
+
+<div>
+  <form action="">
+    Address: <input type="text" name="address" /><input type="submit" value="Update"/>
+  </form>
+</div>
+<div>
+Your location: <?php print !empty($address)?$address:'unknown' ?>
+</div>   
+
+
+<ul id="locations">
+  <?php
+    foreach($locations as $location) { ?>
+    <li id="<?php print $location['id']?>" data-latlon="<?php print $location['latlon']?>"><?php print $location['address']?></li>
+  <?php } ?>
+</ul>
+
+
+ 
+  
+</body>
+</html>

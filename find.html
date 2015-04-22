@@ -1,0 +1,207 @@
+﻿<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Find A Taproom</title>
+  <meta name="description" content="The HTML5 Herald">
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <div>
+    612Brew
+    Bent Brewstillery
+    Badger Hill Brewery
+    Bang Brewing Co.
+    Bauhaus Brew Labs
+    Bemidji Brewing
+    Bent Paddle Brewing
+    Big Wood Brewery
+    Boom Island Brewing Co.
+    Brau Brothers Brewing Company
+    Burning Brothers Brewing
+    Dangerous Man Brewing
+    ENKI Brewing
+    Excelsior Brewing Co. 
+    Fair State Brewing
+    Flat Earth Brewing Co.
+    Fulton Brewery
+    HammerHeart Brewing
+    Harriet Brewing
+		Indeed Brewing: <span id="indeed_distance"></span> miles.
+    Insight Brewing
+    Jack Pine Brewery
+    Kinney Creek Brewery
+    Lake Superior Brewing Co.
+    Leech Lake Brewing Company   
+    Lift Bridge Brewing Co.
+    LTD Brewing
+    Lucid Brewing
+    LynLake Brewery
+    Mankato Brewery
+    Sisyphus Brewing
+    Sociable Cider Werks
+    Steel Toe Brewing
+    Summit Brewing
+    Surly Brewing Co.
+    Third Street Brewhouse
+    Tin Whiskers Brewing Co. 
+    Urban Growler Brewing Co. 
+    Waconia Brewing Compan
+	</div>
+
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.1.min.js" 
+		type="text/javascript"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.0.6-development-only.js" 
+		type="text/javascript"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false" 
+		type="text/javascript"></script>
+	<script type="text/javascript">
+		function getCurrentPosition() {
+			if (Modernizr.geolocation) {
+				navigator.geolocation.getCurrentPosition(locationSuccess,locationError);
+			} else {
+				// TODO: Decide what to do when the browser doesn't support Geolocation
+			}
+		}
+		
+		function locationSuccess(position)
+		{
+			var latitude = position.coords.latitude;
+			var longitude = position.coords.longitude;
+
+			calculateRoute(latitude, longitude);
+		}
+		
+		function locationError(err)
+		{
+			// TODO: We need to complete our error handling
+			if (err.code == 1) { 
+				// user won't grant permission 
+			}
+			if (err.code == 2) { 
+				// position is currently unavailable 
+			}
+			if (err.code == 3) { 
+				// a timeout has occurred 
+			}
+		}
+	
+		var directionsService = new google.maps.DirectionsService();
+		
+		for (var i=0; nameOfLocation.length; i++) {
+            var distance = getDistance(latitude[0], longitude[0], position.coords.latitude, position.coords.longitude);
+    
+    function calculateRoute(lat, lon) {
+			var distance = 0;
+			var start = new google.maps.LatLng(lat, lon);
+			var end = new google.maps.LatLng(45.0030828,-93.2523256);
+			var request = {origin:start, destination:end, 
+				travelMode: google.maps.DirectionsTravelMode.DRIVING};
+			
+			directionsService.route(request, function(response, status) {
+				if (status == google.maps.DirectionsStatus.OK) {
+					distance  = response.routes[0].legs[0].distance.value;
+					duration = response.routes[0].legs[0].duration.value;
+					$("#indeed_distance").html(Math.round(distance / 1609.344));
+				} else {
+					// TODO: Handle the Google Maps exception
+				}
+			});
+			
+			return distance;
+		}
+		
+		$(document).ready(function() { getCurrentPosition(); });
+	</script>
+  
+  
+  <script type="text/javascript" charset="utf-8">
+    var interval = 5; // [s]
+    var timeout = 60; // [s]
+
+    /* --------------------------------------------------- */
+    var latitude            = new Array();
+    var longtitude          = new Array();
+    var nameOfLocation      = new Array();
+
+    latitude[0]             = 45.0030828;
+    longtitude[0]           = -93.2523256;
+    nameOfLocation[0]       = "Indeed Brewing";
+
+    latitude[1]             = 45.001907;
+    longtitude[1]           = -93.2646852;
+    nameOfLocation[1]       = "Dangerous Man";
+
+    // ...
+    /* --------------------------------------------------- */
+
+    // Wait for device API libraries to load
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    function onDeviceReady() {
+        console.log('in onDeviceReady()');      
+        $(document).ready(function(){
+            setInterval(function(i) {
+                navigator.geolocation.getCurrentPosition(onSuccess, onError, {
+                    maximumAge: 0, 
+                    timeout: (timeout*1000), 
+                    enableHighAccuracy: true }
+                );              
+            }, (interval*1000))
+        });        
+    }
+
+    // onSuccess Geolocation
+    function onSuccess(position) {
+        console.log('in onSuccess()');
+        console.log(position.coords.latitude, "position.coords.latitude");
+        console.log(position.coords.longitude, "position.coords.longitude");
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          + position.timestamp                    + '<br />';   
+
+    var place;                     
+    var accuracy;
+    $("#accuracy").html("GPS accuracy " + position.coords.accuracy + " m.");
+
+    if (position.coords.accuracy < 40) {
+        $("#accuracy").css("background-color", "Gray");     
+        for (var i=0; nameOfLocation.length; i++) {
+            var distance = getDistance(latitude[0], longitude[0], position.coords.latitude, position.coords.longitude);
+
+            if (distance <= 25) {
+                place = i;
+                accuracy = position.coords.accuracy;
+                $("#accuracy").css("background-color", "OrangeRed");
+            } else if (distance <= 20) {
+                place = i;
+                accuracy = position.coords.accuracy;
+                $("#accuracy").css("background-color", "Yellow");
+            } else if (distance <= 15) {
+                place = i;
+                accuracy = position.coords.accuracy;
+                $("#accuracy").css("background-color", "Green");
+            }               
+        }
+
+        $("#info").html("You are about <strong>" + accuracy + "</strong> meters from location <strong>" + nameOfLocation[i] + "</strong>");             
+    } else {
+        $("#info").html("");
+    }                                
+}
+</body>
+</html>

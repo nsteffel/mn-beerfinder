@@ -1,0 +1,192 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>Minnbeers — Search Nearby</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300' 
+          rel='stylesheet' type='text/css'>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/socialicons.css" rel="stylesheet">
+    <link href="css/glyphicons.css" rel="stylesheet">
+    <link href="css/halflings.css" rel="stylesheet">
+    <link href="css/template.css" rel="stylesheet">
+    <link href="css/colors/color-blue.css" rel="stylesheet" id="colorcss">
+
+    <script src="js/modernizr.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    
+   
+    <link rel="stylesheet" href="css/jPages.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+</head>
+<body>
+
+<div class="container">
+<div class="masthead clearfix">
+
+<!-- The Logo -->
+<a href="index.html"><img id="logo" src="img/wwlogo@2x.png" height="63" width="324" alt="Wise Words"></a>
+
+<!-- The Navigation -->
+<ul id="nav" class="nav ww-nav pull-right hidden-phone">
+  <li><a href="index.html">Home</a></li>
+  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Find Beer</a>
+    <ul class="dropdown-menu">
+        <li><a href="#">Search Nearby</a></li>
+        <li><a href="#">Search by Area</a></li>
+        <li><a href="#">View Full List</a></li>
+    </ul>                   
+  </li>
+  <li><a href="#">About</a></li>
+  <li><a href="#">Contact</a></li>
+</ul>
+</div>
+
+<hr>
+
+<div class="row main-content">
+    <div class="offset3 span6 zone-content">
+        <article>
+<div>
+  <form action="">
+    Address: <input type="text" id="address" />
+    <a href="#" class="button-link" onclick="getCoords();">Search</a>
+  </form>
+</div>
+
+<ul id="locations">
+  <li id="612brew" data-latlon="44.999061,-93.246496">612Brew</li>
+  <li id="bent" data-latlon="45.024508,-93.173879">Bent Brewstillery</li>
+  <li id="badgerhill" data-latlon="44.793771,-93.461127">Badger Hill Brewery</li>
+  <li id="bang" data-latlon="44.97048,-93.192588">Bang Brewing</li>
+  <li id="bauhaus" data-latlon="45.00079,-93.244636">Bauhaus Brew Labs</li>
+  <li id="bemidji" data-latlon="47.471782,-94.881616">Bemidji Brewing Company</li>
+  <li id="bentpaddle" data-latlon="46.76764,-92.121874">Bent Paddle Brewing</li>
+  <li id="bigwood" data-latlon="45.085124,-93.006747">Big Wood Brewery</li>
+  <li id="boomisland" data-latlon="44.999866,-93.281473">Boom Island Brewing</li>
+  <li id="braubrothers" data-latlon="44.436527,-95.776115">Brau Brothers</li>
+  <li id="burningbrothers" data-latlon="44.958809,-93.174271">Burning Brothers</li>
+  <li id="dangerousman" data-latlon="45.0011,-93.26638">Dangerous Man</li>
+  <li id="enki" data-latlon="44.859803,-93.661568">ENKI Brewing</li>
+  <li id="excelsior" data-latlon="44.902297,-93.566596">Excelsior Brewing</li>
+  <li id="fairstate" data-latlon="45.013559,-93.247873">Fair State</li>
+  <li id="flatearth" data-latlon="44.962765,-93.071573">Flat Earth</li>
+  <li id="fulton" data-latlon="44.98488,-93.279116">Fulton Beer</li>
+  <li id="hammerheart" data-latlon="45.188805,-93.107281">HammerHeart</li>
+  <li id="harriet" data-latlon="44.94712,-93.233872">Harriet Brewing</li>
+  <li id="indeed" data-latlon="45.003464,-93.251547"><a href="indeed.html">Indeed Brewing</a> (<span id="indeedhours"></span>)</li>
+  <li id="insight" data-latlon="44.991922,-93.212967">Insight Brewing</li>
+  <li id="jackpine" data-latlon="46.345263,-94.235198">Jack Pine</li>
+  <li id="kinney" data-latlon="44.031057,-92.478191">Kinney Creek</li>
+  <li id="lakesuperior" data-latlon="46.761083,-92.133364">Lake Superior Brewing</li>
+  <li id="leechlake" data-latlon="47.102875,-94.612918">Leech Lake Brewing</li>
+  <li id="liftbridge" data-latlon="45.039177,-92.831797">Lift Bridge Brewing</li>
+  <li id="ltd" data-latlon="44.924746,-93.40992">LTD Brewing</li>
+  <li id="lucid" data-latlon="44.895228,-93.449625">Lucid Brewing</li>
+  <li id="lynlake" data-latlon="44.949315,-93.2893129">LynLake Brewery</li>
+  <li id="mankato" data-latlon="44.181367,-94.013933">Mankato Brewery</li>
+  <li id="sisyphus" data-latlon="44.973223,-93.288925">Sisyphus Brewing</li>
+  <li id="sociable" data-latlon="45.004516,-93.24415">Sociable Cider Werks</li>
+  <li id="steeltoe" data-latlon="44.9413,-93.34124">Steel Toe</li>
+  <li id="summit" data-latlon="44.914066,-93.139609">Summit Beer</li>
+  <li id="surly" data-latlon="44.973256,-93.209813">Surly Brewing</li>
+  <li id="thirdstreet" data-latlon="45.458898,-94.429468">Third Street</li>
+  <li id="tinwhiskers" data-latlon="44.950868,-93.093479">Tin Whiskers Brewing</li>
+  <li id="urbangrowler" data-latlon="44.970151,-93.192859">Urban Growler</li>
+  <li id="waconia" data-latlon="44.8431091,-93.7954974">Waconia Brewing</li>
+</ul>
+
+<script src="js/jquery-1.9.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/tinynav.js"></script>
+    <script src="js/template.js"></script>
+
+    <script src="js/latlon.js"></script>
+    <script src="js/jquery.quick.pagination.min.js"></script>
+    
+  <script src="http://maps.google.com/maps/api/js?sensor=set_to_true_or_false"></script>
+  <script>
+    window.onload = function() {
+    $("#locations").hide();
+  }
+  function getCoords(){
+  var geocoder = new google.maps.Geocoder();
+  var address = document.getElementById("address").value;
+  
+  geocoder.geocode( { 'address': address}, function(results, status) {
+  if (status == google.maps.GeocoderStatus.OK)
+  {
+  var lat_input = results[0].geometry.location.k;
+  var lon_input = results[0].geometry.location.D;  
+  }
+  var latlon = new LatLon(lat_input,lon_input);
+	
+    var locations = document.getElementById('locations');
+    var locationList = locations.querySelectorAll('li');
+    var locationArray = Array.prototype.slice.call(locationList, 0);
+    var distanceArray = [];
+ 
+    locationArray.sort(function(a,b){
+      var locA  = a.getAttribute('data-latlon').split(',');
+      var locB  = b.getAttribute('data-latlon').split(',');
+ 
+      distA = latlon.distanceTo(new LatLon(Number(locA[0]),Number(locA[1])));
+      distB = latlon.distanceTo(new LatLon(Number(locB[0]),Number(locB[1])));
+      var distance = distA - distB;
+      return distance;
+      console.log(distance);
+    });
+    
+    locations.innerHTML = "";
+    locationArray.forEach(function(el) {
+      locations.appendChild(el);
+    });
+     $("#locations").quickPagination({pageSize:"4"});;
+     $("#locations").show();
+     
+  });
+  }
+</script>
+
+    <script>
+  window.onload = function() {
+    $("#locations").hide();
+    navigator.geolocation.getCurrentPosition(sortResults);
+  }
+  
+    function sortResults(position) {
+    // Grab current position
+    //Actual use var latlon = new LatLon(position.coords.latitude, position.coords.longitude);
+	//Hotwire it for home
+	var latlon = new LatLon(45.0004375, -93.2535929);
+	
+    var locations = document.getElementById('locations');
+    var locationList = locations.querySelectorAll('li');
+    var locationArray = Array.prototype.slice.call(locationList, 0);
+    var distanceArray = [];
+ 
+    locationArray.sort(function(a,b){
+      var locA  = a.getAttribute('data-latlon').split(',');
+      var locB  = b.getAttribute('data-latlon').split(',');
+ 
+      distA = latlon.distanceTo(new LatLon(Number(locA[0]),Number(locA[1])));
+      distB = latlon.distanceTo(new LatLon(Number(locB[0]),Number(locB[1])));
+      var distance = distA - distB;
+      return distance;
+    });
+ 
+</body>
+</html>
