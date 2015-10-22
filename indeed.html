@@ -11,7 +11,10 @@
 
     <link href='http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300' 
           rel='stylesheet' type='text/css'>
-
+    <link href='https://fonts.googleapis.com/css?family=Lobster' 
+          rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Rancho' 
+        rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/socialicons.css" rel="stylesheet">
@@ -19,6 +22,8 @@
     <link href="css/halflings.css" rel="stylesheet">
     <link href="css/template.css" rel="stylesheet">
     <link href="css/colors/color-blue.css" rel="stylesheet" id="colorcss">
+    
+    <link href="css/overrides.css" rel="stylesheet">
 
     <script src="js/modernizr.js"></script>
 
@@ -39,6 +44,7 @@
 
 <!-- The Logo -->
 <a href="index.html"><img id="logo" src="img/wwlogo@2x.png" height="63" width="324" alt="Wise Words"></a>
+<span style="font-family: Rancho;font-size:48px">taprooms.mn</span>
 
 <!-- The Navigation -->
 <ul id="nav" class="nav ww-nav pull-right hidden-phone">
@@ -61,45 +67,59 @@
 <h1>Indeed Brewing Company</h1>
 
 <div class="main-content">
-  <div class="row">
+    <div class="row">  
     <div class="span8">
-        <article>  
+        
         <h2>Basics</h2>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon home"></i>711 15th Avenue NE, Minneapolis MN 55413</p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon phone"></i><a href="tel:6128435090">(612) 843-5090</a></p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon link"></i><a href="http://www.indeedbrewing.com/brewery/tap-room/">www.indeedbrewing.com</a></p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon facebook"></i><a href="https://www.facebook.com/IndeedBrewing">/IndeedBrewing</a></p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon twitter"></i><a href="https://twitter.com/indeedbrewing">@indeedbrewing</a></p>
-        <p style="float:left"><i class="glyphicons-icon clock"></i></p>
-        <table class="table-striped">
-        <tr><td>Monday</td><td>Closed</td></tr>
-        <tr><td>Tuesday</td><td>Closed</td></tr>
-        <tr><td>Wednesday</td><td>3PM–11PM</td></tr>
-        <tr><td>Thursday</td><td>3PM–11PM</td></tr>
-        <tr><td>Friday</td><td>3PM–11PM</td></tr>
-        <tr><td>Saturday</td><td>12PM –11PM</td></tr>
-        <tr><td>Sunday</td><td>2PM –6PM</td></tr>
-        </table>
-       
+        <p class="lineitem"><i class="glyphicons-icon home"></i><a href="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11284.228074016772!2d-93.251547!3d45.003464!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd1345d270aaeb3c5!2sIndeed+Brewing+Company+and+Taproom!5e0!3m2!1sen!2sus!4v1421260793901">711 15th Avenue NE,<wbr> Minneapolis MN 55413</a></p>
+        <p class="lineitem"><i class="glyphicons-icon phone"></i><a href="tel:6128435090">(612) 843-5090</a></p>
+        <p class="lineitem"><i class="glyphicons-icon link"></i><a href="http://www.indeedbrewing.com/brewery/tap-room/" target="_blank">indeedbrewing.com</a></p>
+        <p class="lineitem"><i class="glyphicons-icon facebook"></i><a href="https://www.facebook.com/IndeedBrewing" target="_blank">/IndeedBrewing</a></p>
+        <p class="lineitem"><i class="glyphicons-icon twitter"></i><a href="https://twitter.com/indeedbrewing" target="_blank">@indeedbrewing</a></p>       
         </article>
     </div>
     
     <div class="span4">
-    <h2>Map</h2>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11284.228074016772!2d-93.251547!3d45.003464!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd1345d270aaeb3c5!2sIndeed+Brewing+Company+and+Taproom!5e0!3m2!1sen!2sus!4v1421260793901" width="400" height="300" frameborder="0" style="border:0"></iframe>
-    </span>
-</div>
-</div>
-<br/><br/>
-<div class="row">
+        <article>
+        <h2>Hours</h2>
+        <table class="hourstable">
+        <tr><td>Monday</td><td>Closed</td></tr>
+        <tr><td>Tuesday</td><td>Closed</td></tr>
+        <tr><td>Wednesday</td><td>3PM – 11PM</td></tr>
+        <tr><td>Thursday</td><td>3PM – 11PM</td></tr>
+        <tr><td>Friday</td><td>12PM – 11PM</td></tr>
+        <tr><td>Saturday</td><td>12PM – 11PM</td></tr>
+        <tr><td>Sunday</td><td>12PM — 8PM</td></tr>
+        </table>
+        </article>
+    </div>
+  </div>
+  
+<div class="row details">
 <div class="span12">
         <h2>Details</h2>
-      
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon cutlery"></i>Food trucks are generally available during taproom hours (check website or Twitter for specifics).</p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon beer"></i>4-6 standard beers plus a rotating selection of 2-4 seasonal, special or experimental beers.</p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon vases"></i>10oz, 16oz and 20oz pours available. No flights but tasters/samples happily provided.</p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon shopping_bag"></i>Growlers and 750ml bottles available until 10PM (except Sunday). Seasonal/special/experimental beers may not be available in growlers. Any clean growler will be filled. Merch also available.</p>
-        <p style="line-height:48px;margin-bottom:12px"><i class="glyphicons-icon coins"></i>Happy Hour from 4-6PM Friday and Saturday, $2 off pints of standard beers</p>
+        <article>
+        <div class="lineitem">
+        <div class="iconcontainer"><i class="glyphicons-icon cutlery"></i></div>
+        <span>Food trucks are generally available during taproom hours (check <a href="http://www.indeedbrewing.com/brewery/tap-room/" target="_blank">website</a> or <a href="https://www.facebook.com/IndeedBrewing" target="_blank">Twitter</a> for specifics).</span>
+        </div>
+        <div class="lineitem">
+        <div class="iconcontainer"><i class="glyphicons-icon beer"></i></div>
+        <span>4-6 standard beers plus a rotating selection of 2-4 seasonal, special or experimental beers.</span>
+        </div>
+        <div class="lineitem">
+        <div class="iconcontainer"><i class="glyphicons-icon vases"></i></div>
+        <span>10oz, 16oz and 20oz pours available.</span>
+        </div>
+        <div class="lineitem">
+        <div class="iconcontainer"><i class="glyphicons-icon shopping_bag"></i></div>
+        <span>Growlers and 750ml bottles available until 10PM. Seasonal/special/experimental beers may not be available in growlers. Any clean growler will be filled. Merch also available.</span>
+        </div>
+        <div class="lineitem">
+        <div class="iconcontainer"><i class="glyphicons-icon coins"></i></div>
+        <span>Happy Hour from 4-6PM Friday and Saturday, $2 off pints of standard beers.</span>
+        </div>
+        </article>
 </div>
 </div>
  
@@ -107,6 +127,8 @@
 
 <div class="row">
     <div class="copyright span12">Copyright 2015</div>  
+</div>
+
 </div>
 
 </div>  <!-- End Container -->
