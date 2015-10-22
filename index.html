@@ -20,6 +20,8 @@
     <link href="css/template.css" rel="stylesheet">
     <link href="css/colors/color-blue.css" rel="stylesheet" id="colorcss">
 
+    <link href="css/overrides.css" rel="stylesheet">
+    
     <script src="js/modernizr.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
@@ -43,9 +45,8 @@
   <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Find Beer</a>
     <ul class="dropdown-menu">
         <li><a href="find_detect.html">Search Nearby</a></li>
-        <li><a href="find_lookup.html">Search by Address</a></li>
-        <li><a href="#">Search by Area</a></li>
-        <li><a href="#">View Full List</a></li>
+        <li><a href="find_address.html">Search by Address</a></li>
+        <li><a href="find_list.html">View Full List</a></li>
     </ul>                   
   </li>
   <li><a href="#">About</a></li>
@@ -63,11 +64,10 @@
                 <p class="lead">
                     Our simple goal is to help you find some delicious beer brewed right here in Minnesota.
                 </p>
-                <div class="span6">
-                <a href="find_detect.html" class="button-link">Find Beer Near My Current Location</a>
-                <a href="find_lookup" class="button-link">Find Beer Near A Given Location</a>
-                <a href="#" class="button-link">Find Beer By General Area</a>
-                <a href="#" class="button-link">Find Beer By Reading a List</a>
+                <div class="span6 buttonlist">
+                    <div><a href="find_detect.html" class="button-link">Find Beer Near My Location</a></div>
+                    <div><a href="find_address.html" class="button-link">Find Beer Near An Address</a></div>
+                    <div><a href="find_list.html" class="button-link">Just Show Me the List</a></div>
                 </div>
             </div>
         </article>
