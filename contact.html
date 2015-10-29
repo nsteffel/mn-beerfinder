@@ -2,96 +2,94 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
 <head>
     <meta charset="UTF-8">
     <title>taprooms.mn — Contact Us</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href='http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300' 
-          rel='stylesheet' type='text/css'>
-
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href='http://fonts.googleapis.com/css?family=Poiret+One|PT+Serif|Open+Sans:400,300' rel='stylesheet' type='text/css'>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/socialicons.css" rel="stylesheet">
     <link href="css/glyphicons.css" rel="stylesheet">
     <link href="css/halflings.css" rel="stylesheet">
     <link href="css/template.css" rel="stylesheet">
-    <link href="css/colors/color-blue.css" rel="stylesheet" id="colorcss">
-
+    <link href="css/colors/color-blue.css" id="colorcss" rel="stylesheet">
+    
     <script src="js/modernizr.js"></script>
-
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
     <![endif]-->
-
 </head>
 <body>
-
-<div class="container">
-
-<div class="masthead clearfix">
-
-<!-- The Logo -->
-<a href="index.html"><img id="logo" src="img/wwlogo@2x.png" height="63" width="324" alt="Wise Words"></a>
-
-<!-- The Navigation -->
-<ul id="nav" class="nav ww-nav pull-right hidden-phone">
-  <li><a href="index.html">Home</a></li>
-  <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Find Beer</a>
-    <ul class="dropdown-menu">
-        <li><a href="find_detect.html">Search Nearby</a></li>
-        <li><a href="find_address.html">Search by Address</a></li>
-        <li><a href="find_list.html">View Full List</a></li>
-    </ul>                   
-  </li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-
-<hr>
-
-<div class="row main-content">
-		<div class="offset3 span6">
-		<h1>Contact Us</h1>
-
-		<p>Bug? Inaccurate information? Life altering experience you need to share? We'd love to hear it.</p>
-
-		<form class="contact-form">    
-			<fieldset class="who">
-	            <label for="Name">Name</label>
-	            <input id="Name" class="text" name="Name" type="text" value="">
-	            <label for="Email">Email</label>
-	            <input id="Email" class="text" name="Email" type="text" value="">
-			</fieldset>
-
-			<fieldset class="what">
-		        <label for="message-text">Message</label>
-		        <textarea id="message-text" rows="10" cols="30" name="MessageText"></textarea>
-		        <button type="submit">Send</button>
-		    </fieldset>
-		</form>
-		</div>
-	</div>
-
-<hr>
-
-<div class="row">
-    <div class="copyright span12">Copyright 2015</div>  
-</div>
-
-</div>  <!-- End Container -->
-
-<!-- Le javascript
+    <div class="container">
+        <div class="masthead clearfix">
+            <!-- The Logo -->
+            <a href="index.html"><img alt="Wise Words" height="63" id="logo" src="img/wwlogo@2x.png" width="324"></a> <!-- The Navigation -->
+            <ul class="nav ww-nav pull-right hidden-phone" id="nav">
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Find Beer</a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="find_detect.html">Search Nearby</a>
+                        </li>
+                        <li>
+                            <a href="find_address.html">Search by Address</a>
+                        </li>
+                        <li>
+                            <a href="find_list.html">View Full List</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr>
+        <div class="row main-content">
+            <div class="offset3 span6">
+                <h1>Contact Us</h1>
+                <p>Bug? Inaccurate information? Life altering experience you need to share? We'd love to hear it.</p>
+                <form class="contact-form">
+                    <fieldset class="who">
+                        <label for="Name">Name</label> <input class="text" id="Name" name="Name" type="text" value=""> <label for="Email">Email</label>
+                        <input class="text" id="Email" name="Email" type="text" value="">
+                    </fieldset>
+                    <fieldset class="what">
+                        <label for="message-text">Message</label> 
+                        <textarea cols="30" id="message-text" name="MessageText" rows="10"></textarea> 
+                        <button type="submit">Send</button>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="copyright span12">
+                Crafted with love by Nick Steffel. <a href="https://github.com/nsteffel/mn-beerfinder">Get it on GitHub</a>.
+            </div>
+        </div>
+    </div><!-- End Container -->
+    <!-- Le javascript
 ================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="js/jquery-1.9.1.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/tinynav.js"></script>
-<script src="js/template.js"></script>
-
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/jquery-1.9.1.js">
+    </script> 
+    <script src="js/bootstrap.js">
+    </script> 
+    <script src="js/tinynav.js">
+    </script> 
+    <script src="js/template.js">
+    </script>
 </body>
 </html>
