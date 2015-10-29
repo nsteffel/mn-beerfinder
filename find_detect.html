@@ -27,128 +27,9 @@
       <script src="js/html5shiv.js"></script>
     <![endif]-->
     
-   
-    <link rel="stylesheet" href="css/jPages.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
+    <link rel="stylesheet" href="css/transition.css">
+
     <style>
-#facebookG{
-width:200px;
-margin:0px auto;}
-
-.facebook_blockG{
-background-color:#FFFFFF;
-border:5px solid #299ECB;
-float:left;
-height:142px;
-margin-left:11px;
-width:38px;
-opacity:0.1;
--moz-animation-name:bounceG;
--moz-animation-duration:1.9s;
--moz-animation-iteration-count:infinite;
--moz-animation-direction:linear;
--moz-transform:scale(0.7);
--webkit-animation-name:bounceG;
--webkit-animation-duration:1.9s;
--webkit-animation-iteration-count:infinite;
--webkit-animation-direction:linear;
--webkit-transform:scale(0.7);
--ms-animation-name:bounceG;
--ms-animation-duration:1.9s;
--ms-animation-iteration-count:infinite;
--ms-animation-direction:linear;
--ms-transform:scale(0.7);
--o-animation-name:bounceG;
--o-animation-duration:1.9s;
--o-animation-iteration-count:infinite;
--o-animation-direction:linear;
--o-transform:scale(0.7);
-animation-name:bounceG;
-animation-duration:1.9s;
-animation-iteration-count:infinite;
-animation-direction:linear;
-transform:scale(0.7);
-}
-
-#blockG_1{
--moz-animation-delay:0.57s;
--webkit-animation-delay:0.57s;
--ms-animation-delay:0.57s;
--o-animation-delay:0.57s;
-animation-delay:0.57s;
-}
-
-#blockG_2{
--moz-animation-delay:0.76s;
--webkit-animation-delay:0.76s;
--ms-animation-delay:0.76s;
--o-animation-delay:0.76s;
-animation-delay:0.76s;
-}
-
-#blockG_3{
--moz-animation-delay:0.95s;
--webkit-animation-delay:0.95s;
--ms-animation-delay:0.95s;
--o-animation-delay:0.95s;
-animation-delay:0.95s;
-}
-
-@-moz-keyframes bounceG{
-0%{
--moz-transform:scale(1.2);
-opacity:1}
-
-100%{
--moz-transform:scale(0.7);
-opacity:0.1}
-
-}
-
-@-webkit-keyframes bounceG{
-0%{
--webkit-transform:scale(1.2);
-opacity:1}
-
-100%{
--webkit-transform:scale(0.7);
-opacity:0.1}
-
-}
-
-@-ms-keyframes bounceG{
-0%{
--ms-transform:scale(1.2);
-opacity:1}
-
-100%{
--ms-transform:scale(0.7);
-opacity:0.1}
-
-}
-
-@-o-keyframes bounceG{
-0%{
--o-transform:scale(1.2);
-opacity:1}
-
-100%{
--o-transform:scale(0.7);
-opacity:0.1}
-
-}
-
-@keyframes bounceG{
-0%{
-transform:scale(1.2);
-opacity:1}
-
-100%{
-transform:scale(0.7);
-opacity:0.1}
-
-}
 
 </style>
 </head>
@@ -203,23 +84,13 @@ opacity:0.1}
         <h2 id="locationsHeader">Nearest Locations</h2>
 
         <ul id="locations">
-          <li id="brew_612brew" data-latlon="44.999061,-93.246496">612Brew
-            <ul>
-            <li>Hours Today: <span id="612Hours"></span></li>
-            <li>Address: <a href="http://www.google.com/maps?daddr=945+Broadway+Street+NE+Minneapolis+MN" target="blank">945 Broadway St NE, Minneapolis, MN</a></li>
-            </ul>
-          </li>
+          <li id="brew_612brew" data-latlon="44.999061,-93.246496">612Brew</li>
           <li id="brew_bent" data-latlon="45.024508,-93.173879">Bent Brewstillery</li>
           <li id="brew_badgerhill" data-latlon="44.793771,-93.461127">Badger Hill Brewery</li>
           <li id="brew_bank" data-latlon="44.5081422,-96.4257009">Bank Brewery</li>
           <li id="brew_bang" data-latlon="44.97048,-93.192588">Bang Brewing</li>
           <li id="brew_barley" data-latlon="45.036172,-93.198163">Barley John's</li>
-          <li id="brew_bauhaus" data-latlon="45.00079,-93.244636">Bauhaus Brew Labs
-            <ul>
-            <li>Hours Today: <span id="bauhausHours"></span></li>
-            <li>Address: <a href="http://www.google.com/maps?daddr=1315+Tyler+Street+NE+Minneapolis+MN" target="blank">1315 Tyler Street NE, Minneapolis, MN</a></li>
-            </ul>
-          </li>
+          <li id="brew_bauhaus" data-latlon="45.00079,-93.244636">Bauhaus Brew Labs</li>
           <li id="brew_beaver" data-latlon="45.5584259,-94.1573335">Beaver Island Brewing</li>
           <li id="brew_bemidji" data-latlon="47.471782,-94.881616">Bemidji Brewing Company</li>
           <li id="brew_bentpaddle" data-latlon="46.76764,-92.121874">Bent Paddle Brewing</li>
@@ -247,12 +118,7 @@ opacity:0.1}
           <li id="brew_harriet" data-latlon="44.94712,-93.233872">Harriet Brewing</li>
           <li id="brew_hayes" data-latlon="45.170919,-93.874228">Hayes Public House</li>
           <li id="brew_hayes" data-latlon="44.949224,-93.288285">Herkimer Pub and Brewery</li>
-          <li id="brew_indeed" data-latlon="45.003464,-93.251547"><a href="indeed.html">Indeed Brewing</a>
-            <ul>
-            <li>Hours Today: <span id="indeedHours"></span></li>
-            <li>Address: <a href="http://www.google.com/maps?daddr=711+15th+Avenue+NE+Minneapolis+MN" target="blank">711 15th Ave NE, Minneapolis, MN</a></li>
-            </ul>
-          </li>
+          <li id="brew_indeed" data-latlon="45.003464,-93.251547"><a href="indeed.html">Indeed Brewing</a></li>
           <li id="brew_insight" data-latlon="44.991922,-93.212967">Insight Brewing</li>
           <li id="brew_jackpine" data-latlon="46.345263,-94.235198">Jack Pine</li>
           <li id="brew_junkyard" data-latlon="46.876384,-96.756501">Junkyard Brewing</li>
@@ -268,12 +134,7 @@ opacity:0.1}
           <li id="brew_reads" data-latlon="44.402709,-92.078812">Reads Landing Brewing Company</li>
           <li id="brew_redwing" data-latlon="44.562692,-92.547319">Redwing Brewery</li>
           <li id="brew_sisyphus" data-latlon="44.973223,-93.288925">Sisyphus Brewing</li>
-          <li id="brew_sociable" data-latlon="45.004516,-93.24415">Sociable Cider Werks
-          <ul>
-            <li>Hours Today: <span id="sociableHours"></span></li>
-            <li>Address: <a href="http://www.google.com/maps?daddr=1500+Fillmore+Street+NE+Minneapolis+MN" target="blank">1500 Fillmore St NE, Minneapolis, MN</a></li>
-            </ul>
-          </li>
+          <li id="brew_sociable" data-latlon="45.004516,-93.24415">Sociable Cider Werks</li>
           <li id="brew_steeltoe" data-latlon="44.9413,-93.34124">Steel Toe</li>
           <li id="brew_summit" data-latlon="44.914066,-93.139609">Summit Beer</li>
           <li id="brew_surly" data-latlon="44.973256,-93.209813">Surly Brewing</li>
@@ -295,54 +156,10 @@ opacity:0.1}
     <script src="js/bootstrap.js"></script>
     <script src="js/tinynav.js"></script>
     <script src="js/template.js"></script>
-
+    
+    <script src="js/detectlocation.js"></script>
     <script src="js/latlon.js"></script>
     <script src="js/jquery.quick.pagination.min.js"></script>
-    <script src="js/jquery.openStatus.js"></script>
-    <script src="js/hours.js"></script>
 
-    <script>
-  window.onload = function() {
-    $("#locations").hide();
-    $("#locationsHeader").hide();
-    navigator.geolocation.getCurrentPosition(sortResults);
-  }
-  
-    function sortResults(position) {
-    // Grab current position
-    //Actual use var latlon = new LatLon(position.coords.latitude, position.coords.longitude);
-	//Hotwire it for home
-	var latlon = new LatLon(45.0004375, -93.2535929);
-	
-    var locations = document.getElementById('locations');
-    var locationList = locations.querySelectorAll('li[id^="brew"]');
-    var locationArray = Array.prototype.slice.call(locationList, 0);
-    var distanceArray = [];
- 
-    locationArray.sort(function(a,b){
-      var locA  = a.getAttribute('data-latlon').split(',');
-      var locB  = b.getAttribute('data-latlon').split(',');
- 
-      distA = latlon.distanceTo(new LatLon(Number(locA[0]),Number(locA[1])));
-      distB = latlon.distanceTo(new LatLon(Number(locB[0]),Number(locB[1])));
-      var distance = distA - distB;
-      return distance;
-    });
- 
-    //Reorder the list
-    locations.innerHTML = "";
-    locationArray.forEach(function(el) {
-      locations.appendChild(el);
-    });
-    
-    $("#locations").quickPagination({pageSize:"4"});;
-    
-    $("#facebookG").hide();
-    $("#locations").show();
-    $("#locationsHeader").show();
-};
-
-
-</script>  
 </body>
 </html>
